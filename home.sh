@@ -1,6 +1,26 @@
 # Path
 PHOME="$TOME/Module/YouTube"
+[ -e $PHOME/lib/res.zip ] && unzip -qo $PHOME/lib/res.zip -d $PHOME/lib
 
+[ -e $PHOME/lib/prebuilt.zip ] && unzip -qo $PHOME/lib/prebuilt.zip -d $PHOME/lib
+
+if [ -e $PHOME/lib/revanced-cli.jar ];then
+
+Tv1="$(Xem https://github.com/revanced/revanced-cli/releases | grep '/releases/download' | grep -m1 '.jar' | cut -d \" -f2)"
+
+Taive "https://github.com$Tv1" $PHOME/lib/revanced-cli.jar
+
+if [ -e $PHOME/lib/revanced-cli.jar ];then
+
+cd $PHOME/lib
+
+zip -qr $PHOME/lib/revanced-cli.jar -d prebuilt/windows/* prebuilt/macosx/*
+
+zip -qr $PHOME/lib/revanced-cli.jar prebuilt
+
+fi
+
+fi
 revanced="java -jar $PHOME/lib/revanced-cli.jar"
 
 cat << HiH | sed2
