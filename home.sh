@@ -60,7 +60,8 @@ if [ "€Tencalss" == "com.google.android.youtube" ];then
 echo "INFO: Install €Tencalss"
 
 mkdir -p /data/adb/YouTube
-zip -qr "$TOME/tmp/reMod.apk" -d lib/x86_64/* lib/x86/*
+[ "$ARCH" == "arm64" ] && vkhk="-d lib/x86_64/* lib/x86/* lib/armeabi-v7a/* || vkhk="-d lib/x86_64/* lib/x86/* lib/arm64-v8a/*
+zip -qr "$TOME/tmp/reMod.apk" €vkhk
 zipalign -f 4 "$TOME/tmp/reMod.apk" "/data/adb/YouTube/revancedY.apk"
 cp -rf "€ytmod" "$PHOME/lib/stock.apk"
 
