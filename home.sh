@@ -21,15 +21,15 @@ cat << HiH | sed2
 <items>
 
 <text/>
-<text title="Phiên bản ReVanced CLi" desc-sh="$revanced -V ;echo"/>
+<text title="Version ReVanced CLi" desc-sh="$revanced -V ;echo"/>
 
 <group>
 <action >
-<title>YouTube Mod</title>
-<desc>Nhập tệp tin YouTube gốc nó sẽ mod và tự cài đặt</desc>
-<param name="ytmod" value-sh="Xset linkyt" type="file" title="Tệp tin" editable="true" suffix="apk"/>
-<param name="ncyt" value-sh="Xset linkyt2" type="text" title="Nâng cao" placeholder="-h -V -e v.v"/>
-<param name="microg" title="Tùy chỉnh" label="Microg support" value-sh="Xset microg" type="bool" />
+<title>Tool Cli</title>
+<desc>Import the original YouTube file it will mod and install itself</desc>
+<param name="ytmod" value-sh="Xset linkyt" type="file" title="File" editable="true" suffix="apk"/>
+<param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
+<param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
 <param name="amoled" label="Amoled" value-sh="Xset amoled" type="bool" />
 <param name="icons" label="YouTube icon" value-sh="Xset icons" type="bool" />
 <param name="tuychinh1" label="Default" value-sh="Xset tuychinh1" type="bool" />
