@@ -21,12 +21,12 @@ cat << HiH | sed2
 <items>
 
 <text/>
-<text title="Version ReVanced CLi" desc-sh="$revanced -V ;echo"/>
+<text title="Version ReVanced Cli" desc-sh="$revanced -V ;echo"/>
 
 <group>
 <action >
 <title>Tool Cli</title>
-<desc>Import the original YouTube file it will mod and install itself</desc>
+<desc>Import YouTube apk file it will automatically mod and install </desc>
 <param name="ytmod" value-sh="Xset linkyt" type="file" title="File" editable="true" suffix="apk"/>
 <param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
 <param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
