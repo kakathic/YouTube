@@ -1,5 +1,5 @@
 # Path
-PHOME="$TOME/Module/YouTube"
+PHOME="$TOME/Module/YouTube-Cli"
 
 [ -e $PHOME/lib/res.zip ] && unzip -qo $PHOME/lib/res.zip -d $PHOME/lib
 [ -e $PHOME/lib/prebuilt.zip ] && unzip -qo $PHOME/lib/prebuilt.zip -d $PHOME/lib
