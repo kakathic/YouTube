@@ -1,5 +1,5 @@
 # Path
-PHOME="$TOME/Module/YouTube"
+PHOME="$TOME/Module/YouTube-Cli"
 
 # Command
 cat << HiH | sed2
