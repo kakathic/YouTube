@@ -64,13 +64,14 @@ zip -qr "$TOME/tmp/reMod.apk" -d lib/x86_64/* lib/x86/*
 zipalign -f 4 "$TOME/tmp/reMod.apk" "/data/adb/YouTube/revancedY.apk"
 cp -rf "€ytmod" "$PHOME/lib/stock.apk"
 
-pm uninstall €Tencalss
 chcon u:object_r:apk_data_file:s0 "/data/adb/YouTube/revancedY.apk"
 chcon u:object_r:apk_data_file:s0 "$PHOME/lib/stock.apk"
 
 for Tkvi in €( pm path €Tencalss | grep base | sed 's/package://g' ); do
 umount -l "€Tkvi"
 done
+
+pm uninstall €Tencalss
 
 for Vhkdd in €(find /data/app -name *€Tencalss*); do
 rm -fr "€Vhkdd"

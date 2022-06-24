@@ -7,7 +7,7 @@ cat << HiH | sed2
 <page config-sh=". $PHOME/home.sh" id="$RANDOM" >
 <title>ReVanced Cli</title>
 <desc>Convert regular YouTube to YouTube mod</desc>
-<option reload="true" id="kk" >Full update</option>
+<option reload="true" auto-off="true" id="kk" >Full update</option>
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
