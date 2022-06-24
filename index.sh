@@ -6,8 +6,8 @@ cat << HiH | sed2
 <group>
 <page config-sh=". $PHOME/home.sh" id="$RANDOM" >
 <title>ReVanced CLI</title>
-<desc>Chuyển đổi YouTube thường thành YouTube mod</desc>
-<option reload="true" id="kk" >Cập nhật toàn bộ</option>
+<desc>Convert regular YouTube to YouTube mod</desc>
+<option reload="true" id="kk" >Full update</option>
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
