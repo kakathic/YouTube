@@ -26,7 +26,7 @@ cat << HiH | sed2
 <group>
 <action >
 <title>Tool Cli</title>
-<desc>Import YouTube apk file it will auto mod and install </desc>
+<desc>Import YouTube apk file it will automatically mod and install </desc>
 <param name="ytmod" value-sh="Xset linkyt" type="file" title="File" editable="true" suffix="apk"/>
 <param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
 <param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
@@ -68,7 +68,7 @@ pm uninstall €Tencalss
 chcon u:object_r:apk_data_file:s0 "/data/adb/YouTube/revancedY.apk"
 chcon u:object_r:apk_data_file:s0 "$PHOME/lib/stock.apk"
 
-for Tkvi in €(find /data/app/*/*€Tencalss* -name 'base.apk'); do
+for Tkvi in €( pm path €Tencalss | grep base | sed 's/package://g' ); do
 umount -l "€Tkvi"
 done
 
@@ -78,7 +78,7 @@ done
 
 pm install -r "$PHOME/lib/stock.apk"
 rm -fr "$PHOME/lib/stock.apk"
-su -mm -c mount -o bind "/data/adb/YouTube/revancedY.apk" "€(find /data/app/*/*€Tencalss* -name 'base.apk')"
+su -mm -c mount -o bind "/data/adb/YouTube/revancedY.apk" "€( pm path €Tencalss | grep base | sed 's/package://g' )"
 
 PS=com.android.vending
 DB=/data/data/€PS/databases
