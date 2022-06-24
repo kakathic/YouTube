@@ -26,7 +26,7 @@ cat << HiH | sed2
 <group>
 <action >
 <title>Tool Cli</title>
-<desc>Import YouTube apk file it will automatically mod and install </desc>
+<desc>Import YouTube apk file it will auto mod and install </desc>
 <param name="ytmod" value-sh="Xset linkyt" type="file" title="File" editable="true" suffix="apk"/>
 <param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
 <param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
