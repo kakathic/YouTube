@@ -13,7 +13,7 @@ zip -qr $PHOME/lib/revanced-cli.jar -d prebuilt/windows/* prebuilt/macosx/*
 zip -qr $PHOME/lib/revanced-cli.jar prebuilt
 fi
 fi
-
+rm -fr /data/data/com.termux/files/home/.local/share/apktool/framework/1.apk
 revanced="java -jar $PHOME/lib/revanced-cli.jar"
 
 cat << HiH | sed2
@@ -60,7 +60,7 @@ if [ "€Tencalss" == "com.google.android.youtube" ];then
 echo "INFO: Install €Tencalss"
 
 mkdir -p /data/adb/YouTube
-[ "$ARCH" == "arm64" ] && vkhk="-d lib/x86_64/* lib/x86/* lib/armeabi-v7a/* || vkhk="-d lib/x86_64/* lib/x86/* lib/arm64-v8a/*
+[ "$ARCH" == "arm64" ] && vkhk="-d lib/x86_64/* lib/x86/* lib/armeabi-v7a/*" || vkhk="-d lib/x86_64/* lib/x86/* lib/arm64-v8a/*"
 zip -qr "$TOME/tmp/reMod.apk" €vkhk
 zipalign -f 4 "$TOME/tmp/reMod.apk" "/data/adb/YouTube/revancedY.apk"
 cp -rf "€ytmod" "$PHOME/lib/stock.apk"
