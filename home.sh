@@ -68,14 +68,14 @@ cp -rf "€ytmod" "$PHOME/lib/stock.apk"
 chcon u:object_r:apk_data_file:s0 "/data/adb/YouTube/revancedY.apk"
 chcon u:object_r:apk_data_file:s0 "$PHOME/lib/stock.apk"
 
-for Tkvi in €( pm path €Tencalss | grep base | sed 's/package://g' ); do
-umount -l "€Tkvi"
+for Tkvi in €( find /data/app | grep €Tencalss | grep 'base.apk' ); do
+[ "€Tkvi" ] && umount -l "€Tkvi"
 done
 
 pm uninstall €Tencalss
 
 for Vhkdd in €(find /data/app -name *€Tencalss*); do
-rm -fr "€Vhkdd"
+[ "€Vhkdd" ] && rm -fr "€Vhkdd"
 done
 
 pm install -r "$PHOME/lib/stock.apk"
