@@ -11,7 +11,7 @@ cat << HiH | sed2
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
-ecgi "€loading"
+ecgi "€loading\n"
 Tv1="€(Xem https://github.com/revanced/revanced-cli/releases | grep '/releases/download' | grep -m1 '.jar' | cut -d \" -f2)"
 Taive "https://github.com€Tv1" $PHOME/lib/revanced-cli.jar
 if [ -e $PHOME/lib/revanced-cli.jar ];then
