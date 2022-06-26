@@ -46,7 +46,7 @@ Tset amoled "€amoled"
 [ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
 
 ecgi "€duonglink: €ytmod\n"
-$revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp 2>&1
+$revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp -c 2>&1
 
 Tencalss=€(aapt dump badging "$TOME/tmp/reMod.apk" | tr ' ' '\n' | grep -m1 'name=' | cut -d \' -f2)
 
