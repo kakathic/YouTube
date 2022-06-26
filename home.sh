@@ -31,7 +31,7 @@ cat << HiH | sed2
 <param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
 <param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
 <param name="amoled" label="Amoled" value-sh="Xset amoled" type="bool" />
-<param name="icons" label="YouTube icon" value-sh="Xset icons" type="bool" />
+<param name="icons" label="ReVanced icon" value-sh="Xset icons" type="bool" />
 <param name="tuychinh1" label="Default" value-sh="Xset tuychinh1" type="bool" />
 <set>
 Tset linkyt "€ytmod"
@@ -43,14 +43,12 @@ Tset amoled "€amoled"
 [ "€microg" == 1 ] || Addk='-e microg-support'
 [ "€amoled" == 1 ] || Addk="€Addk -e amoled"
 [ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e disable-shorts-button -e hide-cast-button"
+[ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
 
 ecgi "€duonglink: €ytmod\n"
 $revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp 2>&1
 
 Tencalss=€(aapt dump badging "$TOME/tmp/reMod.apk" | tr ' ' '\n' | grep -m1 'name=' | cut -d \' -f2)
-
-[ "€icons" == 1 ] && cd $PHOME/lib
-[ "€icons" == 1 ] && zip -qr "$TOME/tmp/reMod.apk" res
 
 cp -rf $PHOME/lib/service.d.sh /data/adb/service.d/YouTube.sh
 cp -rf $PHOME/lib/post-fs-data.d.sh /data/adb/post-fs-data.d/YouTube.sh
