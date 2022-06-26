@@ -21,7 +21,7 @@ cat << HiH | sed2
 <items>
 
 <text/>
-<text title="Version ReVanced Cli" desc-sh="$revanced -V ;echo"/>
+<text title="Version ReVanced Cli" desc-sh="$revanced -V"/>
 
 <group>
 <action >
@@ -45,7 +45,7 @@ Tset amoled "€amoled"
 [ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e disable-shorts-button -e hide-cast-button"
 
 ecgi "€duonglink: €ytmod\n"
-$revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp
+$revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp 2>&1
 
 Tencalss=€(aapt dump badging "$TOME/tmp/reMod.apk" | tr ' ' '\n' | grep -m1 'name=' | cut -d \' -f2)
 
@@ -118,7 +118,7 @@ fi
 </action>
 </group>
 
-
+<text desc-sh="echo; $revanced -b $PHOME/lib/revanced-patches.jar -l 2>&1; echo; $revanced -h"/>
 
 </items>
 HiH
