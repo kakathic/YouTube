@@ -4,7 +4,7 @@ PHOME="$TOME/Module/YouTube-Cli"
 # Command
 cat << HiH | sed2
 <group>
-<page config-sh=". $PHOME/home.sh" id="$RANDOM" >
+<page visible="echo $VROOT" config-sh=". $PHOME/home.sh" id="$RANDOM" >
 <title>ReVanced Cli</title>
 <desc>Convert regular YouTube to YouTube mod</desc>
 <option reload="true" auto-off="true" id="kk" >Full update</option>
