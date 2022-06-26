@@ -18,7 +18,18 @@ zip -qr $PHOME/lib/revanced-cli.jar -d prebuilt/windows/* prebuilt/macosx/*
 zip -qr $PHOME/lib/revanced-cli.jar prebuilt
 fi
 fi
-rm -fr /data/data/com.termux/files/home/.local/share/apktool/framework/1.apk
+
+if [ ! -e $PHOME/lib/revanced-patches.jar ];then
+Tv2="$(Xem https://github.com/revanced/revanced-patches/releases | grep '/releases/download' | grep -m1 '.jar' | cut -d \" -f2)"
+Taive "https://github.com$Tv2" $PHOME/lib/revanced-patches.jar
+fi
+
+if [ ! -e $PHOME/lib/revanced-integrations.apk ];then
+Tv3="$(Xem https://github.com/revanced/revanced-integrations/releases | grep '/releases/download' | grep -m1 '.apk' | cut -d \" -f2)"
+Taive "https://github.com$Tv3" $PHOME/lib/revanced-integrations.apk
+fi
+
+
 revanced="java -jar $PHOME/lib/revanced-cli.jar"
 
 cat << HiH | sed2
