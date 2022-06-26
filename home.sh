@@ -1,7 +1,13 @@
 # Path
 PHOME="$TOME/Module/YouTube-Cli"
 
-[ -e $PHOME/lib/prebuilt ] && unzip -qo $PHOME/lib/prebuilt.zip -d $PHOME/lib
+if [ ! -e $PHOME/lib/prebuilt ];then
+mkdir -p $PHOME/lib/prebuilt/linux
+echo "exec $TOME/bin/aapt2 \"\$@\"" > $PHOME/lib/prebuilt/linux/aapt2
+echo "exec $TOME/bin/aapt2 \"\$@\"" > $PHOME/lib/prebuilt/linux/aapt2_64
+echo "exec $TOME/bin/aapt \"\$@\"" > $PHOME/lib/prebuilt/linux/aapt
+echo "exec $TOME/bin/aapt \"\$@\"" > $PHOME/lib/prebuilt/linux/aapt_64
+fi
 
 if [ ! -e $PHOME/lib/revanced-cli.jar ];then
 Tv1="$(Xem https://github.com/revanced/revanced-cli/releases | grep '/releases/download' | grep -m1 '.jar' | cut -d \" -f2)"
