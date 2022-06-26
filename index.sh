@@ -4,10 +4,11 @@ PHOME="$TOME/Module/YouTube-Cli"
 # Command
 cat << HiH | sed2
 <group>
-<page visible="echo $VROOT" config-sh=". $PHOME/home.sh" id="$RANDOM" >
+<page locked="$RROOT" config-sh=". $PHOME/home.sh" id="$RANDOM" >
 <title>ReVanced Cli</title>
 <desc>Convert regular YouTube to YouTube mod</desc>
 <option reload="true" auto-off="true" id="kk" >Full update</option>
+<lock>[ $VROOT == 1 ] && echo 0 || echo "$rootc"</lock>
 <handler>
 # Start code
 if [ "€menu_id" == "kk" ];then
