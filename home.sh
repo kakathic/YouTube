@@ -1,8 +1,7 @@
 # Path
 PHOME="$TOME/Module/YouTube-Cli"
 
-[ -e $PHOME/lib/res.zip ] && unzip -qo $PHOME/lib/res.zip -d $PHOME/lib
-[ -e $PHOME/lib/prebuilt.zip ] && unzip -qo $PHOME/lib/prebuilt.zip -d $PHOME/lib
+[ -e $PHOME/lib/prebuilt ] && unzip -qo $PHOME/lib/prebuilt.zip -d $PHOME/lib
 
 if [ ! -e $PHOME/lib/revanced-cli.jar ];then
 Tv1="$(Xem https://github.com/revanced/revanced-cli/releases | grep '/releases/download' | grep -m1 '.jar' | cut -d \" -f2)"
