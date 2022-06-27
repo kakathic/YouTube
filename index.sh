@@ -35,7 +35,6 @@ Taive "https://github.com€Tv3" $PHOME/lib/revanced-integrations.apk
 Taive "https://github.com/kakathic/YouTube/archive/refs/heads/Cli.zip" "$TEMP_DIR/Test.zip"
 [ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Cập nhật dữ liệu thất bại, vui lòng kiểm tra lại mạng!"
 rm -fr "$TEMP_DIR"/*
-rm -fr $PHOME/lib/revanced-cli.jar
 chmod -R 777 $PHOME
 
 fi
