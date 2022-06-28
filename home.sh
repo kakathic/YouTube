@@ -200,7 +200,7 @@ ecgi "\nSave: $SDCARD_PATH/YT-RE.Zip"
 </action>
 </group>
 
-<text desc-sh="echo; $revanced -b $PHOME/lib/revanced-patches.jar -l 2>&1; echo; $revanced -h"/>
+<text desc-sh="echo; $revanced -h"/>
 
 </items>
 HiH
