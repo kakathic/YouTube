@@ -8,6 +8,7 @@ cat << HiH | sed2
 <title>ReVanced Cli</title>
 <desc>Convert regular YouTube to YouTube mod</desc>
 <option reload="true" auto-off="true" id="kk" >Full update</option>
+<option type="default" id="k1" >Patch information</option>
 <lock>[ $VROOT == 1 ] && echo 0 || echo "$rootc"</lock>
 <handler>
 # Start code
@@ -36,7 +37,8 @@ Taive "https://github.com/kakathic/YouTube/archive/refs/heads/Cli.zip" "$TEMP_DI
 [ -e "$TEMP_DIR/Test.zip" ] && unzip -o "$TEMP_DIR/Test.zip" -d "$TOME/Module" || Thoat "Cập nhật dữ liệu thất bại, vui lòng kiểm tra lại mạng!"
 rm -fr "$TEMP_DIR"/*
 chmod -R 777 $PHOME
-
+else
+java -jar $PHOME/lib/revanced-cli.jar --help -b $PHOME/lib/revanced-patches.jar -l 2>&1
 fi
 # End code
 </handler></page></group>
