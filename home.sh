@@ -62,7 +62,7 @@ Tset amoled "€amoled"
 [ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
 
 ecgi "€duonglink: €ytmod\n"
-$revanced €ncyt €Addk --mount -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp 2>&1
+$revanced -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "€ytmod" -o "$TOME/tmp/reMod.apk" -t $TOME/tmp €ncyt €Addk --mount 2>&1
 
 Tencalss=€(aapt dump badging "$TOME/tmp/reMod.apk" | tr ' ' '\n' | grep -m1 'name=' | cut -d \' -f2)
 
@@ -147,6 +147,55 @@ pm uninstall €remo
 for Vhkdd in €(find /data/app -name *€remo*); do
 [ "€Vhkdd" ] && rm -fr "€Vhkdd"
 done
+
+rm -fr /data/adb/*/YouTube.sh
+</set>
+</action>
+</group>
+
+
+
+<group>
+<action visible="echo $(test -e /sdcard/Tools/Vip && echo 1 || echo 0)">
+<title>Create install magisk</title>
+<desc>It will create a module to install using magisk</desc>
+<param name="fbrvrv" value-sh="Xset fbrvrv" type="file" title="File" editable="true" />
+<param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
+<param name="amoled" label="Amoled" value-sh="Xset amoled" type="bool" />
+<param name="icons" label="ReVanced icon" value-sh="Xset icons" type="bool" />
+<param name="tuychinh1" label="Default" value-sh="Xset tuychinh1" type="bool" />
+<set>
+Tset fbrvrv "€fbrvrv"
+Tset linkyt2 "€ncyt"
+Tset microg "€microg"
+Tset icons "€icons"
+Tset amoled "€amoled"
+
+Addk='-e microg-support -e premium-heading'
+[ "€amoled" == 1 ] || Addk="€Addk -e amoled"
+[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e disable-shorts-button -e hide-cast-button"
+[ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
+
+ecgi "€duonglink: €fbrvrv\n"
+
+mkdir -p $TOME/tmp/apks/tmp/apks
+unzip -o "€fbrvrv" -d $TOME/tmp/apks
+ecgi
+[ -e $TOME/tmp/apks/com.google.android.youtube.apk ] && mv -f $TOME/tmp/apks/com.google.android.youtube.apk $TOME/tmp/apks/base.apk
+$revanced -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "$TOME/tmp/apks/base.apk" -o "$TOME/tmp/apks/tmp/common/reMod.apk" -t $TOME/tmp/kk €ncyt €Addk --mount 2>&1
+
+ecgi "\nData copy..."
+
+for vod in base.apk config.arm64_v8a.apk config.xxxhdpi.apk config.en.apk config.vi.apk; do
+cp -rf $TOME/tmp/apks/*€vod $TOME/tmp/apks/tmp/apks
+done
+
+ecgi "\nPack into zip..."
+cd $TOME/tmp/apks/tmp
+rm -fr $SDCARD_PATH/YT-RE.Zip
+cp -rf $PHOME/lib/YT-RE.Zip $SDCARD_PATH/YT-RE.Zip
+zip -qr $SDCARD_PATH/YT-RE.Zip *
+ecgi "\nSave: $SDCARD_PATH/YT-RE.Zip"
 </set>
 </action>
 </group>
