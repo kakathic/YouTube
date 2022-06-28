@@ -132,6 +132,25 @@ fi
 </action>
 </group>
 
+<group>
+<action >
+<title>Uninstall</title>
+<desc>It will remove the YouTube app or YouTube music</desc>
+<param name="remo" option-sh="echo 'com.google.android.youtube|YouTube'; echo 'com.google.android.apps.youtube.music|YouTube music'"/>
+<set>
+for Tkvi in €( find /data/app | grep €remo | grep 'base.apk' ); do
+[ "€Tkvi" ] && umount -l "€Tkvi"
+done
+
+pm uninstall €remo
+
+for Vhkdd in €(find /data/app -name *€remo*); do
+[ "€Vhkdd" ] && rm -fr "€Vhkdd"
+done
+</set>
+</action>
+</group>
+
 <text desc-sh="echo; $revanced -b $PHOME/lib/revanced-patches.jar -l 2>&1; echo; $revanced -h"/>
 
 </items>
