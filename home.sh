@@ -192,10 +192,11 @@ done
 
 ecgi "\nPack into zip..."
 cd $TOME/tmp/apks/tmp
-rm -fr $SDCARD_PATH/YT-RE.Zip
-cp -rf $PHOME/lib/YT-RE.Zip $SDCARD_PATH/YT-RE.Zip
-zip -qr $SDCARD_PATH/YT-RE.Zip *
-ecgi "\nSave: $SDCARD_PATH/YT-RE.Zip"
+[ "€amoled" == 1 ] && Tenkkd="YT-RE-Amoled.Zip" || Tenkkd="YT-RE.Zip"
+rm -fr $SDCARD_PATH/€Tenkkd
+cp -rf $PHOME/lib/YT-RE.Zip $SDCARD_PATH/€Tenkkd
+zip -qr $SDCARD_PATH/€Tenkkd *
+ecgi "\nSave: $SDCARD_PATH/€Tenkkd"
 </set>
 </action>
 </group>
