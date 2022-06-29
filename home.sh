@@ -192,9 +192,27 @@ done
 
 ecgi "\nPack into zip..."
 cd $TOME/tmp/apks/tmp
-[ "€amoled" == 1 ] && Tenkkd="YT-RE-Amoled.Zip" || Tenkkd="YT-RE.Zip"
+cp -rf $PHOME/lib/module.prop $TOME/tmp/apks/tmp
+
+if [ "€amoled" == 1 ];then
+Tenkkd="YT-RE-Amoled.Zip"
+echo "
+version=€(aapt dump badging "$TOME/tmp/apks/base.apk" | tr ' ' '\n' | grep 'versionName=' | cut -d \' -f2)
+versionCode=$(date +"%H%d%m%y")
+updateJson=https://raw.githubusercontent.com/kakathic/YouTube/Cli/YouTube-Amoled.json
+" >> $TOME/tmp/apks/tmp/module.prop
+else
+Tenkkd="YT-RE.Zip"
+echo "
+version=€(aapt dump badging "$TOME/tmp/apks/base.apk" | tr ' ' '\n' | grep 'versionName=' | cut -d \' -f2)
+versionCode=$(date +"%H%d%m%y")
+updateJson=https://raw.githubusercontent.com/kakathic/YouTube/Cli/YouTube.json
+" >> $TOME/tmp/apks/tmp/module.prop
+fi
+
 rm -fr $SDCARD_PATH/€Tenkkd
 cp -rf $PHOME/lib/YT-RE.Zip $SDCARD_PATH/€Tenkkd
+
 zip -qr $SDCARD_PATH/€Tenkkd *
 ecgi "\nSave: $SDCARD_PATH/€Tenkkd"
 </set>
