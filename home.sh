@@ -58,7 +58,7 @@ Tset amoled "€amoled"
 
 [ "€microg" == 1 ] || Addk='-e microg-support'
 [ "€amoled" == 1 ] || Addk="€Addk -e amoled"
-[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e disable-shorts-button -e hide-cast-button"
+[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e hide-shorts-button -e hide-cast-button"
 [ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
 
 ecgi "€duonglink: €ytmod\n"
@@ -173,7 +173,7 @@ Tset amoled "€amoled"
 
 Addk='-e microg-support -e premium-heading'
 [ "€amoled" == 1 ] || Addk="€Addk -e amoled"
-[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e disable-shorts-button -e hide-cast-button"
+[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e hide-shorts-button -e hide-cast-button"
 [ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
 
 ecgi "€duonglink: €fbrvrv\n"
