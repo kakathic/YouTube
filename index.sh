@@ -7,7 +7,7 @@ cat << HiH | sed2
 <page locked="$RROOT" config-sh=". $PHOME/home.sh" id="$RANDOM" >
 <title>ReVanced Cli</title>
 <desc>Convert regular YouTube to YouTube mod</desc>
-<option reload="true" auto-off="true" id="kk" >Full update</option>
+<option auto-off="true" auto-finish="true" id="kk" >Full update</option>
 <option type="default" id="k1" >Patch information</option>
 <option type="default" id="k2" >Help</option>
 <lock>[ $VROOT == 1 ] && echo 0 || echo "$rootc"</lock>
