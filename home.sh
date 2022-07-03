@@ -55,7 +55,7 @@ Tset linkyt2 "€ncyt"
 Tset microg "€microg"
 Tset icons "€icons"
 Tset amoled "€amoled"
-
+STime
 [ "€microg" == 1 ] || Addk='-e microg-support'
 [ "€amoled" == 1 ] || Addk="€Addk -e amoled"
 [ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e hide-shorts-button -e hide-cast-button -e hide-autoplay-button"
@@ -127,7 +127,7 @@ pm install -r -d "$TOME/tmp/reMod3.apk"
 else
 echi "Error"
 fi
-
+ETime
 </set>
 </action>
 </group>
