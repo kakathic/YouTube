@@ -41,6 +41,8 @@ chmod -R 777 $PHOME
 elif [ "€menu_id" == "k2" ];then
 java -jar $PHOME/lib/revanced-cli.jar --help
 else
+java -jar $PHOME/lib/revanced-cli.jar -b $PHOME/lib/revanced-patches.jar -l --with-descriptions 2>&1
+echo
 java -jar $PHOME/lib/revanced-cli.jar -b $PHOME/lib/revanced-patches.jar -l 2>&1
 fi
 # End code

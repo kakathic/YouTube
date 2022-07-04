@@ -219,7 +219,7 @@ ecgi "\nSave: $SDCARD_PATH/€Tenkkd"
 </action>
 </group>
 
-<text desc-sh="echo; $revanced -h"/>
+<text desc-sh="echo; $revanced -b $PHOME/lib/revanced-patches.jar -l --with-versions 2>&1"/>
 
 </items>
 HiH
