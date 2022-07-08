@@ -42,7 +42,7 @@ cat << HiH | sed2
 <group>
 <action >
 <title>Tool Cli</title>
-<desc>Import YouTube apk file it will automatically mod and install </desc>
+<desc>Import YouTube apk file it will auto mod and install </desc>
 <param name="ytmod" value-sh="Xset linkyt" type="file" title="File" editable="true" suffix="apk"/>
 <param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
 <param name="microg" title="Custom" label="Microg support" value-sh="Xset microg" type="bool" />
@@ -73,8 +73,20 @@ chmod -R 777 /data/adb/*/YouTube.sh
 if [ "€Tencalss" == "com.google.android.youtube" ];then
 echo "INFO: Install €Tencalss"
 
+for Tkvi in €( find /data/app | grep €Tencalss | grep 'base.apk' ); do
+[ "€Tkvi" ] && umount -l "€Tkvi" 2>/dev/null
+done
+
+[ -e /data/adb/YouTube/revancedY.apk ] && umount -l /data/adb/YouTube/revancedY.apk
+echo "Uninstall: €(pm uninstall €Tencalss)"
+[ -e /data/adb/YouTube/revancedY.apk ] && rm -fr /data/adb/YouTube
+
+for Vhkdd in €(find /data/app -name *€Tencalss*); do
+[ "€Vhkdd" ] && rm -fr "€{Vhkdd%/*}"
+done
+
 mkdir -p /data/adb/YouTube
-[ "$ARCH" == "arm64" ] && vkhk="-d lib/x86_64/* lib/x86/* lib/armeabi-v7a/*" || vkhk="-d lib/x86_64/* lib/x86/* lib/arm64-v8a/*"
+vkhk="-d lib/*"
 zip -qr "$TOME/tmp/reMod.apk" €vkhk
 zipalign -f 4 "$TOME/tmp/reMod.apk" "/data/adb/YouTube/revancedY.apk"
 cp -rf "€ytmod" "$PHOME/lib/stock.apk"
@@ -82,17 +94,7 @@ cp -rf "€ytmod" "$PHOME/lib/stock.apk"
 chcon u:object_r:apk_data_file:s0 "/data/adb/YouTube/revancedY.apk"
 chcon u:object_r:apk_data_file:s0 "$PHOME/lib/stock.apk"
 
-for Tkvi in €( find /data/app | grep €Tencalss | grep 'base.apk' ); do
-[ "€Tkvi" ] && umount -l "€Tkvi"
-done
-
-pm uninstall €Tencalss
-
-for Vhkdd in €(find /data/app -name *€Tencalss*); do
-[ "€Vhkdd" ] && rm -fr "€Vhkdd"
-done
-
-pm install -r "$PHOME/lib/stock.apk"
+echo "Install: €(pm install -r "$PHOME/lib/stock.apk")"
 rm -fr "$PHOME/lib/stock.apk"
 su -mm -c mount -o bind "/data/adb/YouTube/revancedY.apk" "€( pm path €Tencalss | grep base | sed 's/package://g' )"
 
@@ -123,7 +125,7 @@ elif [ "€Tencalss" == "app.revanced.android.youtube" ];then
 zipalign -f 4 "$TOME/tmp/reMod.apk" "$TOME/tmp/reMod2.apk"
 apksigner apk testkey "$TOME/tmp/reMod2.apk" "$TOME/tmp/reMod3.apk"
 chcon u:object_r:apk_data_file:s0 "$TOME/tmp/reMod3.apk"
-pm install -r -d "$TOME/tmp/reMod3.apk"
+echo "Install: €(pm install -r -d "$TOME/tmp/reMod3.apk")"
 else
 echi "Error"
 fi
@@ -139,13 +141,15 @@ ETime
 <param name="remo" option-sh="echo 'com.google.android.youtube|YouTube'; echo 'com.google.android.apps.youtube.music|YouTube music'"/>
 <set>
 for Tkvi in €( find /data/app | grep €remo | grep 'base.apk' ); do
-[ "€Tkvi" ] && umount -l "€Tkvi"
+[ "€Tkvi" ] && umount -l "€Tkvi" 2>/dev/null
 done
 
-pm uninstall €remo
+[ -e /data/adb/YouTube/revancedY.apk ] && umount -l /data/adb/YouTube/revancedY.apk
+echo "Uninstall: €(pm uninstall €remo)"
+[ -e /data/adb/YouTube/revancedY.apk ] && rm -fr /data/adb/YouTube
 
 for Vhkdd in €(find /data/app -name *€remo*); do
-[ "€Vhkdd" ] && rm -fr "€Vhkdd"
+[ "€Vhkdd" ] && rm -fr "€{Vhkdd%/*}"
 done
 
 rm -fr /data/adb/*/YouTube.sh
@@ -153,71 +157,6 @@ rm -fr /data/adb/*/YouTube.sh
 </action>
 </group>
 
-
-
-<group>
-<action visible="echo $(test -e /sdcard/Tools/Vip && echo 1 || echo 0)">
-<title>Create install magisk</title>
-<desc>It will create a module to install using magisk</desc>
-<param name="fbrvrv" value-sh="Xset fbrvrv" type="file" title="File" editable="true" />
-<param name="ncyt" value-sh="Xset linkyt2" type="text" title="Advanced" placeholder="-h -V -e v.v"/>
-<param name="amoled" label="Amoled" value-sh="Xset amoled" type="bool" />
-<param name="icons" label="ReVanced icon" value-sh="Xset icons" type="bool" />
-<param name="tuychinh1" label="Default" value-sh="Xset tuychinh1" type="bool" />
-<set>
-Tset fbrvrv "€fbrvrv"
-Tset linkyt2 "€ncyt"
-Tset microg "€microg"
-Tset icons "€icons"
-Tset amoled "€amoled"
-
-Addk='-e microg-support -e premium-heading'
-[ "€amoled" == 1 ] || Addk="€Addk -e amoled"
-[ "€tuychinh1" == 1 ] || Addk="€Addk -e disable-create-button -e hide-shorts-button -e hide-cast-button"
-[ "€icons" == 1 ] || Addk="€Addk -e custom-branding"
-
-ecgi "€duonglink: €fbrvrv\n"
-
-mkdir -p $TOME/tmp/apks/tmp/apks
-unzip -o "€fbrvrv" -d $TOME/tmp/apks
-ecgi
-[ -e $TOME/tmp/apks/com.google.android.youtube.apk ] && mv -f $TOME/tmp/apks/com.google.android.youtube.apk $TOME/tmp/apks/base.apk
-$revanced -m $PHOME/lib/revanced-integrations.apk -b $PHOME/lib/revanced-patches.jar -a "$TOME/tmp/apks/base.apk" -o "$TOME/tmp/apks/tmp/common/reMod.apk" -t $TOME/tmp/kk €ncyt €Addk --mount 2>&1
-
-ecgi "\nData copy..."
-
-for vod in base.apk config.arm64_v8a.apk config.xxxhdpi.apk config.en.apk config.vi.apk; do
-cp -rf $TOME/tmp/apks/*€vod $TOME/tmp/apks/tmp/apks
-done
-
-ecgi "\nPack into zip..."
-cd $TOME/tmp/apks/tmp
-cp -rf $PHOME/lib/module.prop $TOME/tmp/apks/tmp
-
-if [ "€amoled" == 1 ];then
-Tenkkd="YT-RE-Amoled.Zip"
-echo "
-version=€(aapt dump badging "$TOME/tmp/apks/base.apk" | tr ' ' '\n' | grep 'versionName=' | cut -d \' -f2)
-versionCode=$(date +"%H%d%m%y")
-updateJson=https://raw.githubusercontent.com/kakathic/YouTube/Cli/YouTube-Amoled.json
-" >> $TOME/tmp/apks/tmp/module.prop
-else
-Tenkkd="YT-RE.Zip"
-echo "
-version=€(aapt dump badging "$TOME/tmp/apks/base.apk" | tr ' ' '\n' | grep 'versionName=' | cut -d \' -f2)
-versionCode=$(date +"%H%d%m%y")
-updateJson=https://raw.githubusercontent.com/kakathic/YouTube/Cli/YouTube.json
-" >> $TOME/tmp/apks/tmp/module.prop
-fi
-
-rm -fr $SDCARD_PATH/€Tenkkd
-cp -rf $PHOME/lib/YT-RE.Zip $SDCARD_PATH/€Tenkkd
-
-zip -qr $SDCARD_PATH/€Tenkkd *
-ecgi "\nSave: $SDCARD_PATH/€Tenkkd"
-</set>
-</action>
-</group>
 
 <text desc-sh="echo; $revanced -b $PHOME/lib/revanced-patches.jar -l --with-versions 2>&1"/>
 
